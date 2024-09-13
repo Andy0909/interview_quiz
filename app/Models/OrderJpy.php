@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrderUsd extends Model
+class OrderJpy extends Model
 {
     use HasFactory;
 
-    protected $table = 'orders_usd';
+    protected $table = 'orders_jpy';
 
     protected $fillable = [
         'id', 'name', 'city', 'district', 'street', 'price', 'currency',
