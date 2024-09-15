@@ -11,6 +11,10 @@ class OrderRmb extends Model
 
     protected $table = 'orders_rmb';
 
+    protected $primaryKey = 'id';
+    
+    public $incrementing = false;
+
     protected $fillable = [
         'id', 'name', 'city', 'district', 'street', 'price', 'currency',
     ];

@@ -11,6 +11,10 @@ class OrderTwd extends Model
 
     protected $table = 'orders_twd';
 
+    protected $primaryKey = 'id';
+    
+    public $incrementing = false;
+
     protected $fillable = [
         'id', 'name', 'city', 'district', 'street', 'price', 'currency',
     ];

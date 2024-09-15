@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderCreated;
+use App\Http\Requests\OrderRequest;
 use App\Services\OrderService;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class OrderController extends Controller
 {
@@ -20,14 +22,30 @@ class OrderController extends Controller
     }
 
     /**
-     * 取得訂單資料
-     * @param int $id
-     * @return array
+     * 儲存訂單資料
+     * @param OrderRequest $request
+     * @return JsonResponse
      */
-    public function getOrder(int $id) : array
+    public function store(OrderRequest $request): JsonResponse
+    {
+        // 檢查傳入參數
+        $validated = $request->validated();
+
+        // 建立事件
+        event(new OrderCreated($validated));
+
+        return response()->json(['message' => '訂單成立'], 200);
+    }
+
+    /**
+     * 取得訂單資料
+     * @param string $id
+     * @return JsonResponse
+     */
+    public function getOrder(string $id): JsonResponse
     {
         $order = $this->orderService->getOrderById($id);
-        
-        return $order;
+
+        return response()->json($order, 200);
     }
 }
