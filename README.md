@@ -4,7 +4,7 @@
     - 每個類別和方法都有明確的職責。例如，`OrderController` 負責處理訂單相關的 HTTP 請求，而 `OrderService` 負責訂單的業務邏輯。
 
 2. **開放封閉原則 (Open/Closed Principle, OCP)**：
-    - 可以通過擴展 `OrderRepository` 來支持新的幣別，而無需修改現有的程式碼。這樣可以提高系統的靈活性和可維護性。
+    - 透過事件和監聽器，系統可以擴展貨幣種類而不需要修改核心邏輯。
 
 3. **介面隔離原則 (Interface Segregation Principle, ISP)**：
     - `OrderRepository` 只包含 `OrderService` 所需的方法，而不包含其他不相關的方法。
