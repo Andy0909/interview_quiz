@@ -25,12 +25,6 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts --no-cache
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 777 /var/www/storage
 
-# 清除 Laravel 緩存
-RUN php artisan view:clear \
-    && php artisan route:clear \
-    && php artisan config:clear \
-    && php artisan cache:clear
-
 # 定義掛載點
 VOLUME ["/var/www"]
 
