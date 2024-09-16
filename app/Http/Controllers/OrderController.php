@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Events\OrderCreated;
 use App\Http\Requests\OrderRequest;
-use App\Services\OrderService;
+use App\Interfaces\OrderServiceInterface;
 use Illuminate\Http\JsonResponse;
 
 class OrderController extends Controller
 {
-    /** @var OrderService */
+    /** @var OrderServiceInterface */
     private $orderService;
 
     /**
      * construct
-     * @param OrderService $orderService
+     * @param OrderServiceInterface $orderService
      */
-    public function __construct(OrderService $orderService)
+    public function __construct(OrderServiceInterface $orderService)
     {
         $this->orderService = $orderService;
     }

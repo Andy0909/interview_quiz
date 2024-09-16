@@ -2,18 +2,19 @@
 
 namespace App\Services;
 
-use App\Repositories\OrderRepository;
+use App\Interfaces\OrderServiceInterface;
+use App\Interfaces\OrderRepositoryInterface;
 
-class OrderService
+class OrderService implements OrderServiceInterface
 {
-    /** @var OrderRepository */
+    /** @var OrderRepositoryInterface */
     private $orderRepository;
 
     /**
      * construct
-     * @param OrderRepository $orderRepository
+     * @param OrderRepositoryInterface $orderRepository
      */
-    public function __construct(OrderRepository $orderRepository) 
+    public function __construct(OrderRepositoryInterface $orderRepository) 
     {
         $this->orderRepository = $orderRepository;
     }

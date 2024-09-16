@@ -3,17 +3,17 @@
 namespace App\Listeners;
 
 use App\Events\OrderCreated;
-use App\Services\OrderService;
+use App\Interfaces\OrderServiceInterface;
 
 class OrderCreatedListener
 {
-    /** @var OrderService */
+    /** @var OrderServiceInterface */
     private $orderService;
 
     /**
      * Create the event listener.
      */
-    public function __construct(OrderService $orderService)
+    public function __construct(OrderServiceInterface $orderService)
     {
         $this->orderService = $orderService;
     }

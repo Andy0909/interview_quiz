@@ -6,10 +6,13 @@
 2. **開放封閉原則 (Open/Closed Principle, OCP)**：
     - 透過事件和監聽器，系統可以擴展貨幣種類而不需要修改核心邏輯。
 
-3. **介面隔離原則 (Interface Segregation Principle, ISP)**：
+3. **里式替換原則 (Liskov Substitution Principle, LSP)**：
+    - 所有實現 `OrderServiceInterface` 和 `OrderRepositoryInterface` 的類別都可以替換其具體實現，而不會影響系統的正確性和行為。
+
+4. **介面隔離原則 (Interface Segregation Principle, ISP)**：
     - `OrderRepository` 只包含 `OrderService` 所需的方法，而不包含其他不相關的方法。
 
-4. **依賴反轉原則 (Dependency Inversion Principle, DIP)**：
+5. **依賴反轉原則 (Dependency Inversion Principle, DIP)**：
     - 在這個專案中，`OrderService` 依賴於 `OrderRepository` 的抽象，而不是具體的實現。這樣可以提高系統的靈活性和可測試性。
 
 ### 設計模式

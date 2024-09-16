@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\OrderRepositoryInterface;
 use App\Models\Order;
 use App\Models\OrderTwd;
 use App\Models\OrderUsd;
@@ -11,7 +12,7 @@ use App\Models\OrderMyr;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class OrderRepository
+class OrderRepository implements OrderRepositoryInterface
 {
     /** @var Order */
     private $order;
